@@ -1,0 +1,102 @@
+@keyframes blink {
+    0% {color: #00487C;}
+    69% {color: #00487C;}
+    70% {color: transparent;}
+    100% {color: transparent;}
+}
+html{
+    height: 100%;
+    margin: 0;
+    color: #00487C;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(50deg, rgba(214,242,255,1) 0%, rgba(122,186,230,1) 100%);
+}
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1%;
+    border-bottom: 1px solid #00487C;
+}
+nav{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0.5%;
+}
+h2{
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 5%;
+}
+
+.navigation{
+    padding: 5%;
+    border: 1px solid transparent;
+    border-radius: 15px;
+}
+.navigation:hover{
+    border: 1px solid #00487C;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.05);
+}
+.content-container{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
+.text{
+    padding: 5%;
+}
+
+
+.blink{
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    height: 100%;
+    margin: 1%;
+    border-right: 1px solid #00487C;
+}
+#github-slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    height: 32px;
+    border: 2px solid #283950;
+    border-radius: 20px;
+    background-color: #00487C
+}
+#github-text{
+    color: #fff;
+    margin: auto;
+    padding: 0 15px;
+}
+#github-logo{
+    transition: all 0.5s ease-in-out;
+}
+
+
+#active-content{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#result{
+    font-size: large;
+}
