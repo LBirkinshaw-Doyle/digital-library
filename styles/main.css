@@ -1,13 +1,14 @@
-@keyframes blink {
-    0% {color: #00487C;}
-    69% {color: #00487C;}
-    70% {color: transparent;}
-    100% {color: transparent;}
+:root{
+    --color-neutral: #F0EAD2;
+    --color-main-light: #DDE5B6;
+    --color-main-dark: #ADC178;
+    --color-contrast-light: #A98467;
+    --color-contrast-dark: #6C584C;
 }
 html{
     height: 100%;
     margin: 0;
-    color: #00487C;
+    color: var(--color-contrast-dark);
     font-family: "Lucida Console", "Courier New", monospace;
 }
 body{
@@ -15,13 +16,13 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(50deg, rgba(214,242,255,1) 0%, rgba(122,186,230,1) 100%);
+    background-image: linear-gradient(50deg, var(--color-neutral) 50%, var(--color-main-light) 100%);
 }
 header{
     display: flex;
     flex-direction: row-reverse;
     margin: 1%;
-    border-bottom: 1px solid #00487C;
+    border-bottom: 1px solid var(--color-contrast-dark);
 }
 nav{
     display: flex;
@@ -40,7 +41,7 @@ h2{
     border-radius: 15px;
 }
 .navigation:hover{
-    border: 1px solid #00487C;
+    border: 1px solid var(--color-contrast-dark);
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.05);
 }
@@ -53,13 +54,6 @@ h2{
     padding: 5%;
 }
 
-
-.blink{
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-
 #sidebar{
     display: flex;
     flex-direction: column;
@@ -68,7 +62,7 @@ h2{
     width: 20%;
     height: 100%;
     margin: 1%;
-    border-right: 1px solid #00487C;
+    border-right: 1px solid var(--color-contrast-dark);
 }
 #github-slider{
     display: flex;
@@ -76,9 +70,9 @@ h2{
     justify-content: left;
     width: 100%;
     height: 32px;
-    border: 2px solid #283950;
+    border: 2px solid var(--color-contrast-dark);
     border-radius: 20px;
-    background-color: #00487C
+    background-color: var(--color-contrast-dark);
 }
 #github-text{
     color: #fff;
@@ -89,14 +83,10 @@ h2{
     transition: all 0.5s ease-in-out;
 }
 
-
 #active-content{
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-#result{
-    font-size: large;
 }
