@@ -16,8 +16,18 @@ const book = {
         this.read = false;
     },
     type: "book",
-    toggleRead: function() {this.read? this.read = false : this.read = true;}, 
+    toggleRead: function() {this.read ? this.read = false : this.read = true;},
+    info: function() {
+        let information = `${this.title} was written by ${this.authorOtherName} ${this.authorLastName}. It is ${this.pages} pages long.`;
+        this.read ? information += "It has been read." : information += "It still needs to be read.";
+        return information;
+    },
 }
 
 let bookArray = [];
 
+addBooksButton.addEventListener("click", addBook);
+
+function addBook () {
+    
+}
