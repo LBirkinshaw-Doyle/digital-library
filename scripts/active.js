@@ -26,8 +26,18 @@ const book = {
 
 let bookArray = [];
 
-addBooksButton.addEventListener("click", addBook);
+addBooksButton.addEventListener("click", createForm);
 
-function addBook () {
-    
+function createForm () {
+    toolbar.removeChild(addBooksButton);
+
+    const form = document.createElement('form');
+    form.id = "add-book-form";
+    form.action = "/input-form-page";
+    form.method = "post";
+    toolbar.appendChild(form);
+
+    const titleInput = document.createElement('input');
+    titleInput.id = "title-input";
+
 }
