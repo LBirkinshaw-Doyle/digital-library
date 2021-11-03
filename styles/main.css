@@ -109,6 +109,18 @@ button{
     justify-content: left;
     align-items: center;
 }
+#toolbar{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: top;
+    align-items: center;
+}
+label {margin: 0 5px 0 10px;}
+.form-element{
+    margin: 5px 10px;
+}
 .book-card {
     max-width: 15%;
     padding: 10px;
