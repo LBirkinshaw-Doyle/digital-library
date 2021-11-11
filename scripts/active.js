@@ -42,5 +42,33 @@ function addBook () {
 }
 
 function displayLibrary () {
+    bookArray.forEach(currentBook => {
+        const bookCard = document.createElement('div');
+        bookCard.classList.add("book-card");
+        currentBook.read ? bookCard.classList.add("read") : bookCard.classList.add("not-read");
+        bookcase.appendChild(bookCard);
+
+        const cardText = document.createElement('p');
+        bookCard.appendChild(cardText);
+
+        const titleEmph = document.createElement('em');
+        titleEmph.textContent = 'Title: ';
+        cardText.append(titleEmph, currentBook.title, document.createElement('br'));
+
+        const authorEmph = document.createElement('em');
+        authorEmph.textContent = 'Author: ';
+        cardText.append(authorEmph, currentBook.authorOtherName + " " + currentBook.authorLastName, document.createElement('br'));
+
+        const pagesEmph = document.createElement('em');
+        pagesEmph.textContent = 'Pages: ';
+        cardText.append(pagesEmph, currentBook.pages, document.createElement('br'));
+
+        const readEmph = document.createElement('em');
+        readEmph.textContent = 'Read: ';
+        const readButton = document.createElement('input');
+        readButton.type = 'checkbox';
+        readButton.id = 'read-checkbox';
+        cardText.append(readEmph, readButton);        
+    })
     
 }

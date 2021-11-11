@@ -34,6 +34,9 @@ h2{
     font-weight: bold;
     padding-bottom: 5%;
 }
+em{
+    font-weight: bolder;
+}
 
 .navigation{
     padding: 5%;
@@ -123,8 +126,19 @@ label {margin: 0 5px 0 10px;}
 }
 .book-card {
     max-width: 15%;
+    min-width: 150px;
     padding: 10px;
     border: 1px solid var(--color-contrast-dark);
     border-radius: 15px;
     margin: 5px auto;
+}
+.read{
+    background: var(--color-contrast-dark);
+    color: var(--color-neutral);
+    border: 2px solid var(--color-contrast-light);
+}
+.not-read{
+    background: var(--color-main-light);
+    color: var(--color-contrast-dark);
+    border: 1px solid var(--color-main-dark);
 }
