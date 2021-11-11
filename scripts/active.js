@@ -16,7 +16,7 @@ const book = {
         this.read = false;
     },
     type: "book",
-    toggleRead: function() {this.read ? this.read = false : this.read = true;},
+    toggleRead: function() {this.read ? this.read = false : this.read = true},
     info: function() {
         let information = `${this.title} was written by ${this.authorOtherName} ${this.authorLastName}. It is ${this.pages} pages long.`;
         this.read ? information += "It has been read." : information += "It still needs to be read.";
@@ -25,8 +25,6 @@ const book = {
 }
 
 let bookArray = [];
-
-// addBooksButton.addEventListener("click", addBook);
 
 document.addEventListener("click", clickEventHandler);
 
@@ -45,6 +43,9 @@ function clickEventHandler (e) {
     }
     if (e.target.id === "read-checkbox") {
         let currentBookCard = e.target.parentElement.parentElement
+        let libraryIndex = currentBookCard.dataset.libraryLocation;
+        bookArray[libraryIndex].toggleRead();
+
         if (currentBookCard.classList.contains("read")) {
             currentBookCard.classList.remove("read");
             currentBookCard.classList.add("not-read");
@@ -60,6 +61,7 @@ function displayLibrary () {
     bookArray.forEach(currentBook => {
         const bookCard = document.createElement('div');
         bookCard.classList.add("book-card");
+        bookCard.dataset.libraryLocation = bookArray.length - 1;
         currentBook.read ? bookCard.classList.add("read") : bookCard.classList.add("not-read");
         bookcase.appendChild(bookCard);
 
