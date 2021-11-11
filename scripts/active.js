@@ -26,22 +26,37 @@ const book = {
 
 let bookArray = [];
 
-addBooksButton.addEventListener("click", addBook);
+// addBooksButton.addEventListener("click", addBook);
 
-function addBook () {
-    let bookTitle = prompt("What is the title of the book?");
-    let bookAuthorLast = prompt("What is the author's last name?");
-    let bookAuthorOther = prompt("What are the author's other names?");
-    let bookPages = prompt("How many pages is the book?");
+document.addEventListener("click", clickEventHandler);
 
-    const newBook = Object.create(book);
-    newBook.init(bookTitle, bookAuthorLast, bookAuthorOther, bookPages);
+function clickEventHandler (e) {
+    if (e.target.id === "add-books") {
+        let bookTitle = prompt("What is the title of the book?");
+        let bookAuthorLast = prompt("What is the author's last name?");
+        let bookAuthorOther = prompt("What are the author's other names?");
+        let bookPages = prompt("How many pages is the book?");
 
-    bookArray.push(newBook);
-    displayLibrary();
-}
+        const newBook = Object.create(book);
+        newBook.init(bookTitle, bookAuthorLast, bookAuthorOther, bookPages);
 
+        bookArray.push(newBook);
+        displayLibrary();
+    }
+    if (e.target.id === "read-checkbox") {
+        let currentBookCard = e.target.parentElement.parentElement
+        if (currentBookCard.classList.contains("read")) {
+            currentBookCard.classList.remove("read");
+            currentBookCard.classList.add("not-read");
+        }
+        else {
+            currentBookCard.classList.remove("not-read");
+            currentBookCard.classList.add("read");
+        }
+    }
+};
 function displayLibrary () {
+    while (bookcase.firstChild) {bookcase.removeChild(bookcase.firstChild)};
     bookArray.forEach(currentBook => {
         const bookCard = document.createElement('div');
         bookCard.classList.add("book-card");
