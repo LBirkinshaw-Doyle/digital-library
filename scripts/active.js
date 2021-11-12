@@ -42,7 +42,7 @@ function clickEventHandler (e) {
         displayLibrary();
     }
     if (e.target.id === "read-checkbox") {
-        let currentBookCard = e.target.parentElement.parentElement
+        let currentBookCard = e.target.parentElement.parentElement;
         let libraryIndex = currentBookCard.dataset.libraryLocation;
         bookArray[libraryIndex].toggleRead();
 
@@ -55,13 +55,19 @@ function clickEventHandler (e) {
             currentBookCard.classList.add("read");
         }
     }
+    if (e.target.id === "delete-button") {
+        let currentBookCard = e.target.parentElement.parentElement;
+        let libraryIndex = currentBookCard.dataset.libraryLocation;
+        bookArray.splice(libraryIndex, 1);
+        displayLibrary();
+    }
 };
 function displayLibrary () {
     while (bookcase.firstChild) {bookcase.removeChild(bookcase.firstChild)};
     bookArray.forEach(currentBook => {
         const bookCard = document.createElement('div');
         bookCard.classList.add("book-card");
-        bookCard.dataset.libraryLocation = bookArray.length - 1;
+        bookCard.dataset.libraryLocation = bookcase.childElementCount;
         currentBook.read ? bookCard.classList.add("read") : bookCard.classList.add("not-read");
         bookcase.appendChild(bookCard);
 
@@ -85,7 +91,12 @@ function displayLibrary () {
         const readButton = document.createElement('input');
         readButton.type = 'checkbox';
         readButton.id = 'read-checkbox';
-        cardText.append(readEmph, readButton);        
+        cardText.append(readEmph, readButton, document.createElement('br'));        
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'DELETE';
+        deleteButton.id = 'delete-button';
+        cardText.append(deleteButton);
     })
     
 }

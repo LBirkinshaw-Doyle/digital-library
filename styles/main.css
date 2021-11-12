@@ -143,3 +143,8 @@ label {margin: 0 5px 0 10px;}
     color: var(--color-contrast-dark);
     border: 1px solid var(--color-main-dark);
 }
+
+#delete-button{
+    text-align: center;
+    width: 100%;
+}
