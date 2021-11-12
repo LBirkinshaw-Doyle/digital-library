@@ -76,6 +76,7 @@ em{
     border: 2px solid var(--color-contrast-dark);
     border-radius: 20px;
     background-color: var(--color-contrast-dark);
+    text-decoration: none;
 }
 #github-text{
     color: #fff;

@@ -91,6 +91,7 @@ function displayLibrary () {
         const readButton = document.createElement('input');
         readButton.type = 'checkbox';
         readButton.id = 'read-checkbox';
+        if (bookArray[bookCard.dataset.libraryLocation].read) {readButton.setAttribute("checked", true);}
         cardText.append(readEmph, readButton, document.createElement('br'));        
 
         const deleteButton = document.createElement('button');
